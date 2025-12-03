@@ -1,0 +1,325 @@
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@keyframes slideInUp {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes slideInDown {
+  from {
+    transform: translateY(-30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes slideInRight {
+  from {
+    transform: translateX(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes scaleIn {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  75% {
+    transform: translateX(5px);
+  }
+}
+
+.hero-content {
+  animation: fadeIn 1s ease-out;
+}
+.hero-title {
+  animation: slideInDown 0.8s ease-out;
+}
+.hero-description {
+  animation: slideInUp 1s ease-out 0.2s backwards;
+}
+.hero-content .btn-primary {
+  animation: scaleIn 0.6s ease-out 0.4s backwards;
+}
+.navbar {
+  animation: slideInDown 0.5s ease-out;
+}
+.quiz-start {
+  animation: scaleIn 0.5s ease-out;
+}
+.quiz-start h1 {
+  animation: slideInDown 0.6s ease-out 0.1s backwards;
+}
+.quiz-start p {
+  animation: fadeIn 0.8s ease-out 0.3s backwards;
+}
+#theme-form {
+  animation: slideInUp 0.7s ease-out 0.4s backwards;
+}
+.quiz-game {
+  animation: slideInUp 0.5s ease-out;
+}
+.quiz-game.active {
+  animation: scaleIn 0.4s ease-out;
+}
+.question-container {
+  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+}
+.question-exit {
+  animation: fadeOut 0.3s ease-out;
+}
+.question-enter {
+  animation: fadeIn 0.3s ease-out;
+}
+.option-btn {
+  animation: slideInUp 0.3s ease-out;
+  animation-fill-mode: backwards;
+}
+.option-btn:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.option-btn:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.option-btn:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.option-btn:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.quiz-result {
+  animation: scaleIn 0.6s ease-out;
+}
+.quiz-result h2 {
+  animation: pulse 2s ease-in-out infinite;
+}
+.team-member {
+  animation: fadeIn 0.6s ease-out;
+  animation-fill-mode: backwards;
+}
+.team-member:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.team-member:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.team-member:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.team-member:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.team-member:nth-child(5) {
+  animation-delay: 0.5s;
+}
+.about-section h1 {
+  animation: slideInDown 0.6s ease-out;
+}
+.about-section p {
+  animation: fadeIn 0.8s ease-out;
+  animation-fill-mode: backwards;
+}
+.about-section p:nth-of-type(1) {
+  animation-delay: 0.2s;
+}
+.about-section p:nth-of-type(2) {
+  animation-delay: 0.3s;
+}
+.about-section p:nth-of-type(3) {
+  animation-delay: 0.4s;
+}
+.about-section p:nth-of-type(4) {
+  animation-delay: 0.5s;
+}
+
+.btn-primary {
+  transition: all 0.3s ease;
+}
+.btn-primary:hover {
+  animation: pulse 1s ease-in-out infinite;
+}
+.nav-link {
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+.nav-link:hover {
+  transform: translateY(-2px);
+}
+.team-member {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.team-member:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 50px rgba(40, 116, 199, 0.3);
+}
+.member-image {
+  transition: transform 0.3s ease;
+}
+.team-member:hover .member-image {
+  transform: scale(1.05);
+}
+.option-btn {
+  transition: all 0.2s ease;
+}
+.option-btn:hover {
+  transform: translateX(5px);
+}
+.btn-close {
+  transition: all 0.3s ease;
+}
+.btn-close:hover {
+  transform: rotate(90deg);
+}
+
+.spinner {
+  animation: spin 1s linear infinite;
+}
+@keyframes successPulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+}
+.option-btn.correct {
+  animation: successPulse 0.5s ease-out;
+}
+@keyframes errorShake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-10px);
+  }
+  75% {
+    transform: translateX(10px);
+  }
+}
+.option-btn.incorrect {
+  animation: errorShake 0.5s ease-out;
+}
+
+section {
+  transition: opacity 0.5s ease-out;
+}
+.container {
+  transition: all 0.3s ease;
+}
+img {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+input,
+textarea,
+select {
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+input:focus,
+textarea:focus,
+select:focus {
+  animation: pulse 0.5s ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0s !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0s !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.page-transition {
+  animation: fadeIn 0.5s ease-out;
+}
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.scroll-reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+@keyframes progressBar {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+.progress-bar {
+  animation: progressBar 1s ease-out;
+}

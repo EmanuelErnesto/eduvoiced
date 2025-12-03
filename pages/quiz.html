@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Teste seus conhecimentos! Gere quizzes personalizados com IA sobre qualquer tema. Responda 10 perguntas e veja sua pontuação instantaneamente."
+    />
+    <meta name="keywords" content="quiz, ia, gemini, teste, aprendizado" />
+    <meta name="author" content="Emanuel Ernesto" />
+
+    <title>Quiz Interativo - EduVoice</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="../assets/css/main.css" />
+    <link rel="stylesheet" href="../assets/css/responsive.css" />
+    <link rel="stylesheet" href="../assets/css/animations.css" />
+
+    <link
+      rel="icon"
+      href="../assets/images/imagem-matricial.jpeg"
+      type="image/jpeg"
+    />
+  </head>
+  <body>
+    <a href="#main" class="skip-link">Pular para o conteúdo</a>
+
+    <header class="navbar" role="navigation" aria-label="Menu principal">
+      <div class="navbar-container">
+        <div class="logo">
+          <a
+            href="../index.html"
+            style="
+              display: flex;
+              align-items: center;
+              gap: 0.75rem;
+              text-decoration: none;
+            "
+          >
+            <img
+              src="../assets/images/imagem-matricial.jpeg"
+              alt="EduVoice Logo"
+              class="logo-img"
+            />
+            <span class="logo-text">EduVoice</span>
+          </a>
+        </div>
+
+        <nav class="nav-menu">
+          <ul class="nav-list">
+            <li><a href="../index.html" class="nav-link">Home</a></li>
+            <li><a href="sobre.html" class="nav-link">Sobre</a></li>
+            <li><a href="equipe.html" class="nav-link">Equipe</a></li>
+            <li>
+              <a href="quiz.html" class="nav-link nav-link-cta active">Quiz</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <div class="quiz-container">
+        <!-- Tela Inicial - Input de Tema -->
+        <div class="quiz-start">
+          <h1>EduVoice</h1>
+          <p>Digite um tema para gerar seu quiz personalizado</p>
+
+          <form id="theme-form">
+            <input
+              type="text"
+              id="theme-input"
+              placeholder="Digite um tema (ex: História do Brasil)"
+              required
+              maxlength="100"
+              aria-label="Digite o tema do quiz"
+            />
+            <button type="submit" class="btn-primary">Gerar Quiz</button>
+          </form>
+
+          <div
+            class="loading"
+            id="loading-state"
+            role="status"
+            aria-live="polite"
+          >
+            <div class="spinner" aria-hidden="true"></div>
+            <span class="sr-only"
+              >Gerando seu quiz personalizado, por favor aguarde...</span
+            >
+            <p aria-hidden="true">Gerando seu quiz personalizado...</p>
+          </div>
+        </div>
+
+        <div class="quiz-game" id="quiz-game">
+          <button class="btn-close" id="btn-close" aria-label="Fechar quiz">
+            ×
+          </button>
+
+          <div class="quiz-audio-controls">
+            <button
+              class="btn-audio"
+              id="btn-read-question"
+              title="Narrar pergunta novamente"
+              onclick="window.reNarrateCurrentQuestion()"
+            >
+              🔊 Ouvir
+            </button>
+            <button
+              class="btn-audio"
+              id="btn-toggle-music"
+              title="Pausar/Tocar música"
+            >
+              🎵
+            </button>
+          </div>
+
+          <div class="progress-bar-container">
+            <div
+              class="progress-bar"
+              id="progress-bar"
+              style="width: 10%"
+            ></div>
+          </div>
+
+          <div class="quiz-progress">
+            <span class="current-question" id="current-question"
+              >Pergunta 1</span
+            >
+            <span class="total-questions">de 10</span>
+          </div>
+
+          <div class="question-container">
+            <h2 class="question-text" id="question-text"></h2>
+
+            <div class="options-grid" id="options-grid"></div>
+          </div>
+
+          <div class="quiz-navigation">
+            <button class="btn-prev" id="btn-prev" disabled>← Anterior</button>
+            <button class="btn-verify" id="btn-verify" disabled>
+              Verificar Resposta
+            </button>
+            <button class="btn-next" id="btn-next">Próxima →</button>
+          </div>
+        </div>
+
+        <div class="quiz-result" id="quiz-result">
+          <h2>Quiz Finalizado!</h2>
+          <p class="score" id="final-score"></p>
+          <button class="btn-primary" id="btn-new-quiz">Novo Quiz</button>
+          <button class="btn-review-answers" id="btn-review-answers">
+            📋 Revisar Respostas
+          </button>
+          <div class="review-container" id="review-container"></div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer" role="contentinfo">
+      <div class="footer-content">
+        <p>&copy; 2025 EduVoice. Todos os direitos reservados.</p>
+        <img
+          src="../assets/images/imagem-matricial.jpeg"
+          alt="EduVoice Logo"
+          class="footer-logo"
+        />
+      </div>
+    </footer>
+
+    <script src="../assets/js/config.js"></script>
+    <script src="../assets/js/audio-manager.js"></script>
+    <script src="../assets/js/voice-manager.js"></script>
+    <script src="../assets/js/gemini-api.js" defer></script>
+    <script src="../assets/js/quiz.js" defer></script>
+    <script src="../assets/js/app.js" defer></script>
+  </body>
+</html>
